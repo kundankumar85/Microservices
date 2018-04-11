@@ -1,0 +1,39 @@
+# Spring properties
+spring:
+  application:
+     name: api-gateway
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    preferIpAddress: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    users:
+      path: /customer/**    #any request is matching this pattern then It will get forwarded to customer-service.
+      serviceId: customer-service
+    customer-gateway:       #any request which  having customer-gateway will get forwarded to serviceId mentioned sevice name.
+      #path: /gateway/**
+      serviceId: customer-gateway
+      #url: http://192.168.0.103:2223 #Its working redirect using url
+      #zuul.host.socket-timeout-millis=30000
+ribbon:
+  eureka:
+    ebabled: true
+  ReadTimeout: 30000    #If using sevice discovery , If you have configured Zuul routes by specifying URLs, you need to use zuul.host.connect-timeout-millis and zuul.host.socket-timeout-millis.
+  SocketTimeout: 30000  #If using sevice discovery
+    
+# HTTP Server
+server:
+  port: 2224   # HTTP (Tomcat) port
+
+  
+  
+ 

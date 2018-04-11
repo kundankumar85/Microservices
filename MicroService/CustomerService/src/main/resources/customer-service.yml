@@ -1,0 +1,19 @@
+# Spring properties
+spring:
+  application:
+     name: customer-service
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    preferIpAddress: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
+# HTTP Server
+server:
+  port: 2223   # HTTP (Tomcat) port

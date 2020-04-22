@@ -49,3 +49,6 @@ zuul:
 
 #Url for microservice board
 http://localhost:1111/
+
+#Feign Client
+Customer Gateway will call Customer Service using feign client.

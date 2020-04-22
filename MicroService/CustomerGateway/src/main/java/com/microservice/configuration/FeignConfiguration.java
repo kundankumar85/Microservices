@@ -6,9 +6,11 @@ import feign.Request;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.cloud.openfeign.FeignFormatterRegistrar;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 
 import java.util.Arrays;
@@ -16,7 +18,7 @@ import java.util.Arrays;
 /**
  * The type Feign configuration.
  */
-@Configuration
+@Import(FeignClientsConfiguration.class)
 public class FeignConfiguration {
 
     /** Total maximum number of connections. */

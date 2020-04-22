@@ -17,3 +17,10 @@ eureka:
 # HTTP Server
 server:
   port: 2223   # HTTP (Tomcat) port
+
+apacheHttpClient:
+  maxConnections: 1000
+  maxConnectionsPerHost: 1000
+  connectTimeoutMillis: 5000
+  readTimeoutMillis: 60000
+  logLevel: Full  # None/Basic/Headers/Full

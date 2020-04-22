@@ -4,6 +4,8 @@ spring:
 # Discovery Server Access
 eureka:
   client:
+    healthCheck:
+      enable: true
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
   instance:
@@ -15,3 +17,10 @@ eureka:
 # HTTP Server
 server:
   port: 2222   # HTTP (Tomcat) port
+
+apacheHttpClient:
+  maxConnections: 1000
+  maxConnectionsPerHost: 1000
+  connectTimeoutMillis: 5000
+  readTimeoutMillis: 60000
+  logLevel: Full  # None/Basic/Headers/Full

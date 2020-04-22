@@ -52,3 +52,8 @@ http://localhost:1111/
 
 #Feign Client
 Customer Gateway will call Customer Service using feign client.
+
+#Swagger
+Customer-Gateway
+http://localhost:2222/swagger-ui.html
+http://localhost:2224/customer-gateway/swagger-ui.htm

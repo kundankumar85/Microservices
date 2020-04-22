@@ -51,6 +51,17 @@
 			<version>2.6.1</version>
         </dependency>
 		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
 			<groupId>com.microservice</groupId>
 			<artifactId>DataModel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>

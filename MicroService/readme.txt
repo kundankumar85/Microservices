@@ -44,3 +44,8 @@ zuul:
       serviceId: customer-gateway
       #url: http://192.168.0.103:2223 #Its working redirect using url
       #zuul.host.socket-timeout-millis=30000
+
+
+
+#Url for microservice board
+http://localhost:1111/

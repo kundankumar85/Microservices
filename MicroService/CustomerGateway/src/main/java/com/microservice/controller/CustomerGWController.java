@@ -3,6 +3,7 @@ package com.microservice.controller;
 import com.microservice.client.CustomerServiceClient;
 import com.microservice.model.Customer;
 import io.swagger.annotations.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -19,6 +20,7 @@ import java.util.List;
 @RefreshScope
 @RestController
 @Api(tags = "Customer-Gateway Controller")
+@Slf4j
 public class CustomerGWController {
 	
 	@Value("${customerservice.url}")
@@ -47,7 +49,7 @@ public class CustomerGWController {
 			@ApiResponse(code = 500, message = "Internal server error while processing") })
 	@GetMapping(path="findAllCustomers",produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Customer> findCustomers(){
-		System.out.println(customerServiceName);
+	log.info("find all customer");
 		/*return restTemplate.getForObject("http://"+customerServiceUrl.toUpperCase() + "/findall",
 				String.class);*/
 
@@ -56,6 +58,7 @@ public class CustomerGWController {
 
 	@PostMapping(path="createCustomer",consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void addCustomer(@RequestBody Customer customer){
+        log.info("add customer");
 		customerServiceClient.addCustomer(customer);
 	}
 	

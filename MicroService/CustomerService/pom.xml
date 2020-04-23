@@ -83,6 +83,10 @@
 			<version>2.0.0.M2</version>
 			<scope>compile</scope>
 		</dependency>-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

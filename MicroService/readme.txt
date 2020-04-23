@@ -57,7 +57,7 @@ Customer Gateway will call Customer Service using feign client.
 #Swagger
 Customer-Gateway
 http://localhost:2222/swagger-ui.html
-http://localhost:2224/customer-gateway/swagger-ui.htm
+http://localhost:2224/customer-gateway/swagger-ui.html
 
 #config server
 Property urls for config-server
